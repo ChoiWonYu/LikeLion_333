@@ -1,0 +1,26 @@
+$blue : #BBDEFB;
+$red : #E57373;
+$purple : #CE03D8;
+@mixin menuStyles($color){
+
+        background : $color;
+        &:hover{
+            background : lighten($color,5%);
+        }
+        &:active{
+            background : darken($color,20%);}
+    }
+
+.Menu{
+    color : white;
+    width : 200px;
+    &.blue{
+        @include menuStyles($blue);
+    }
+    &.purple{
+        @include menuStyles($purple);
+    }
+    &.red{
+        @include menuStyles($red);
+    }
+}
